@@ -1,0 +1,22 @@
+{
+  "playlistCollection": [
+    {
+      "id": "41e89574-5729-417d-9940-6730a3a36474",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "Homer's playlist",
+      "songs": []
+    },
+    {
+      "id": "70ddd38b-a035-44b2-bad8-04dd992130b1",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "title": "Marge's playlist",
+      "songs": []
+    },
+    {
+      "id": "8554bf84-5775-43e9-b3cc-8e56dfb5d12e",
+      "userid": "5bdff439-13b3-4560-b362-7a4622de232f",
+      "title": "Rosanne's playlist",
+      "songs": []
+    }
+  ]
+}
