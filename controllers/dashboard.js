@@ -20,7 +20,7 @@ const dashboard = {
       playlists: playlistStore.getUserPlaylists(loggedInUser.id),
       fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
     };
-    logger.info('about to render', viewData.playlists);
+    logger.info('about to render'+ viewData.playlists);
     response.render('dashboard', viewData);
     }
     else response.redirect('/');
@@ -28,7 +28,7 @@ const dashboard = {
   
   deletePlaylist(request, response) {
     const playlistId = request.params.id;
-    logger.debug(`Deleting Playlist ${playlistId}`);
+    logger.debug('Deleting Playlist' + playlistId);
     playlistStore.removePlaylist(playlistId);
     response.redirect('/dashboard');
   },
@@ -41,7 +41,7 @@ const dashboard = {
       title: request.body.title,
       songs: [],
     };
-    logger.debug('Creating a new Playlist', newPlayList);
+    logger.debug('Creating a new Playlist' + newPlayList);
     playlistStore.addPlaylist(newPlayList);
     response.redirect('/dashboard');
   },
