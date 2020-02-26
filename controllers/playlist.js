@@ -9,7 +9,7 @@ const playlist = {
   index(request, response) {
       const loggedInUser = accounts.getCurrentUser(request);  
       const playlistId = request.params.id;
-      logger.debug('Playlist id = ', playlistId);
+      logger.debug('Playlist id = ' + playlistId);
       if (loggedInUser) {
       const viewData = {
         title: 'Playlist',
@@ -23,7 +23,7 @@ const playlist = {
     deleteSong(request, response) {
     const playlistId = request.params.id;
     const songId = request.params.songid;
-    logger.debug(`Deleting Song ${songId} from Playlist ${playlistId}`);
+    logger.debug('Deleting Song' + songId + 'from Playlist' + playlistId);
     playlistStore.removeSong(playlistId, songId);
     response.redirect('/playlist/' + playlistId);
   },

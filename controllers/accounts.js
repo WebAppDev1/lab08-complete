@@ -36,7 +36,7 @@ const accounts = {
     const user = request.body;
     user.id = uuid();
     userstore.addUser(user);
-    logger.info(`registering ${user.email}`);
+    logger.info('registering' + user.email);
     response.redirect('/');
   },
 
@@ -44,7 +44,7 @@ const accounts = {
     const user = userstore.getUserByEmail(request.body.email);
     if (user) {
       response.cookie('playlist', user.email);
-      logger.info(`logging in ${user.email}`);
+      logger.info('logging in' + user.email);
       response.redirect('/start');
     } else {
       response.redirect('/login');
