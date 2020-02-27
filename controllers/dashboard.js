@@ -39,6 +39,7 @@ const dashboard = {
       id: uuid(),
       userid: loggedInUser.id,
       title: request.body.title,
+      duration: request.body.duration,
       songs: [],
     };
     logger.debug('Creating a new Playlist' + newPlayList);
