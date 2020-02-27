@@ -24,4 +24,5 @@ h1 {
   padding-right:5px;
   line-height:20px;
   font-weight:bold;
+  text-transform:capitalize;
 }
