@@ -50,7 +50,7 @@ const playlistStore = {
     songs[index].duration = updatedSong.duration;
   },
   
-  getUserPlaylists(userid) {
+    getUserPlaylists(userid) {
     return this.store.findBy(this.collection, { userid: userid });
   },
 };
