@@ -1,9 +1,5 @@
-Lab 7
+Lab 8
 =================
 
-- Added update function
-- Added total playlists statistic
-- Added total songs statistic
-
-Exercise:
-- Add more statistics e.g. avg, min, max
+- Added user store
+- Added user authentication
