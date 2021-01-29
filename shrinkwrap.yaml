@@ -1,6 +1,6 @@
 dependencies:
   body-parser: 1.19.0
-  cookie-parser: 1.4.5
+  cookie-parser: 1.4.4
   express: 4.17.1
   express-handlebars: 3.1.0
   lodash: 4.17.15
@@ -133,19 +133,25 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
-  /cookie-parser/1.4.5:
+  /cookie-parser/1.4.4:
     dependencies:
-      cookie: 0.4.0
+      cookie: 0.3.1
       cookie-signature: 1.0.6
     dev: false
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-f13bPUj/gG/5mDr+xLmSxxDsB9DQiTIfhJS/sqjrmfAWiAN+x2O4i/XguTL9yDZ+/IFDanJ+5x7hC4CXT9Tdzw==
+      integrity: sha512-lo13tqF3JEtFO7FyA49CqbhaFkskRJ0u/UAiINgrIXeRCY41c88/zxtrECl8AKH3B0hj9q10+h3Kt8I7KlW4tw==
   /cookie-signature/1.0.6:
     dev: false
     resolution:
       integrity: sha1-4wOogrNCzD7oylE6eZmXNNqzriw=
+  /cookie/0.3.1:
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha1-5+Ch+e9DtMi6klxcWpboBtFoc7s=
   /cookie/0.4.0:
     dev: false
     engines:
