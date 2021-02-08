@@ -13,9 +13,10 @@ const app = express();
 
 // static files output to public folder
 app.use(express.static("public"));
-app.use(cookieParser());
 
+// use bodyParser and cookieParser
 app.use(bodyParser.urlencoded({ extended: false, }));
+app.use(cookieParser());
 
 // use handlebars as view engine
 app.engine('.hbs', exphbs({

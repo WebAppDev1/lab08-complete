@@ -8,7 +8,6 @@ const accounts = require ('./accounts.js');
 // create about object
 const about = {
   
-  // index method - responsible for creating and rendering the view
   index(request, response) {
     const loggedInUser = accounts.getCurrentUser(request); 
     logger.info('about rendering');
@@ -22,6 +21,7 @@ const about = {
     }
     else response.redirect('/');    
   },
+  
 };
 
 // export the about module

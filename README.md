@@ -1,8 +1,7 @@
 Lab 8
 =================
 
-- Added user store
-- Added user authentication
+- Added user store 
 - Added accounts.js controller
 - Added new views for homepage, signup, and login
 - Updated playlist model to use user ids

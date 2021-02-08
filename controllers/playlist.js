@@ -6,24 +6,24 @@ const playlistStore = require('../models/playlist-store');
 const accounts = require ('./accounts.js');
 
 const playlist = {
-index(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);  
-    const playlistId = request.params.id;
-    logger.debug('Playlist id = ' + playlistId);
-    if (loggedInUser) {
-    const viewData = {
-      title: 'Playlist',
-      playlist: playlistStore.getPlaylist(playlistId),
-      fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
-    };
-    response.render('playlist', viewData);
-    }
-    else response.redirect('/');
-},
+  index(request, response) {
+      const loggedInUser = accounts.getCurrentUser(request);  
+      const playlistId = request.params.id;
+      logger.debug('Playlist id = ' + playlistId);
+      if (loggedInUser) {
+      const viewData = {
+        title: 'Playlist',
+        playlist: playlistStore.getPlaylist(playlistId),
+        fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+      };
+      response.render('playlist', viewData);
+      }
+      else response.redirect('/');
+  },
     deleteSong(request, response) {
     const playlistId = request.params.id;
     const songId = request.params.songid;
-    logger.debug(`Deleting Song ${songId} from Playlist ${playlistId}`);
+    logger.debug('Deleting Song' + songId + 'from Playlist' + playlistId);
     playlistStore.removeSong(playlistId, songId);
     response.redirect('/playlist/' + playlistId);
   },
