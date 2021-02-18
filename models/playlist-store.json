@@ -1,17 +1,22 @@
 {
   "playlistCollection": [
     {
-      "id": "d2aefa28-aed8-498c-8103-47ab357fcd84",
+      "id": "41e89574-5729-417d-9940-6730a3a36474",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "title": "Homer's playlist",
-      "duration": "5",
       "songs": []
     },
     {
-      "id": "cb73e201-d9e6-496c-977c-37f1bf16e321",
+      "id": "70ddd38b-a035-44b2-bad8-04dd992130b1",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
       "title": "Marge's playlist",
-      "duration": "10",
+      "songs": []
+    },
+    {
+      "id": "c32996be-eff7-4d7d-9b1e-e4722cbffb80",
+      "userid": "5bdff439-13b3-4560-b362-7a4622de232f",
+      "title": "New Playlist",
+      "duration": "35",
       "songs": []
     }
   ]
