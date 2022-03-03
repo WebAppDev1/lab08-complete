@@ -11,26 +11,26 @@
   </thead>
 <tbody>
     {{#each playlist.songs}}
-    <form class = "ui form" action="/playlist/{{../playlist.id}}/updatesong/{{id}}" method="POST">
+    <form class = "ui stacked segment form" action="/playlist/{{../playlist.id}}/updatesong/{{id}}" method="POST">
     <tr class="fields">
       <td class="field">
         <span class="ui input">
-         <input placeholder="Title" type="text" size="30" name="title" autofocus required value = "{{title}}">
+         <input type="text" name="title" autofocus required title = "Please include a valid Title" placeholder="Title" value = "{{title}}">
         </span>
       </td>
       <td class="field">
         <span class="ui input">
-          <input placeholder="Artist" type="text" size="30" name="artist" required value = "{{artist}}">
+          <input type="text" name="artist" required title = "Please include a valid Artist" placeholder="Artist" value = "{{artist}}">
         </span>
       </td>
       <td class="field">
         <span class="ui input">
-          <input placeholder="Genre" type="text" name="genre" required value = "{{genre}}">
+          <input type="text" name="genre" autofocus required title = "Please include a valid Genre" placeholder="Genre" value = "{{genre}}">         
         </span>
       </td>
       <td class="field">
         <span class="ui input">
-          <input placeholder="Duration" type="text" name="duration" required value = "{{duration}}">
+          <input type="text" name="duration" required title = "Please enter a valid duration" placeholder="Duration" value = "{{duration}}">
         </span>
       </td>
       <td class="center aligned">

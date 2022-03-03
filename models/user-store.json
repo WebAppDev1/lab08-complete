@@ -18,15 +18,15 @@
       "firstName": "Rosanne",
       "lastName": "Birney",
       "email": "rosanne@gmail.com",
-      "password": "secret",
-      "id": "5bdff439-13b3-4560-b362-7a4622de232f"
+      "password": "Secret1",
+      "id": "b6605f62-f9ca-492b-a812-9607dcd218e6"
     },
     {
-      "firstName": "Joe",
-      "lastName": "Bloggs",
-      "email": "jbloggs@gmail.com",
-      "password": "secret",
-      "id": "a84e534a-55ad-4f36-94ef-40c4c0d3aa1c"
+      "firstName": "Rosanne",
+      "lastName": "Birney",
+      "email": "rosanne2@gmail.com",
+      "password": "Secret1",
+      "id": "9340fdd9-0b9e-4701-ad21-8b4994cf3a3e"
     }
   ]
 }

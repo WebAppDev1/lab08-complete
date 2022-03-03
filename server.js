@@ -14,7 +14,6 @@ const app = express();
 // static files output to public folder
 app.use(express.static("public"));
 
-// use bodyParser and cookieParser
 app.use(bodyParser.urlencoded({ extended: false, }));
 app.use(cookieParser());
 
