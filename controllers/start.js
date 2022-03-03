@@ -10,17 +10,17 @@ const start = {
   
   // index method - responsible for creating and rendering the view
   index(request, response) {
-    
+
     const loggedInUser = accounts.getCurrentUser(request);
     logger.info('start rendering');
-    
+
     if(loggedInUser){
-      
+
       const playlists = playlistStore.getAllPlaylists();
       let numPlaylists = playlists.length;
       let numSongs = 0;
-      for (let i in playlists) {
-        numSongs = numSongs + playlists[i].songs.length;
+      for (let item of playlists) {
+        numSongs += item.songs.length;
       }
 
       const viewData = {

@@ -23,15 +23,15 @@ router.post('/authenticate', accounts.authenticate);
 router.get('/start', start.index);
 router.get('/dashboard', dashboard.index);
 router.get('/about', about.index);
+
 router.get('/playlist/:id', playlist.index);
 
 router.get('/playlist/:id/deleteSong/:songid', playlist.deleteSong);
 router.post('/playlist/:id/addsong', playlist.addSong);
+router.post('/playlist/:id/updatesong/:songid', playlist.updateSong);
 
 router.get('/dashboard/deleteplaylist/:id', dashboard.deletePlaylist);
 router.post('/dashboard/addplaylist', dashboard.addPlaylist);
-
-router.post('/playlist/:id/updatesong/:songid', playlist.updateSong);
 
 // export router module
 module.exports = router;
