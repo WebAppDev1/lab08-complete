@@ -62,6 +62,11 @@ class JsonStore {
     await this.db.write();
   }
   
+  findBy(collection, filter) {
+    const results = this.db.data[collection].filter(filter);
+    return results;
+  }
+  
 }
 
 export default JsonStore;
