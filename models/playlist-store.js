@@ -1,7 +1,7 @@
 'use strict';
 
-import logger from '../utils/logger.js';
-import JsonStore from './json-store.js';
+const _ = require('lodash');
+const JsonStore = require('./json-store');
 
 const playlistStore = {
 
@@ -11,43 +11,48 @@ const playlistStore = {
   getAllPlaylists() {
     return this.store.findAll(this.collection);
   },
-  
+
   getPlaylist(id) {
-    return this.store.findOneBy(this.collection, (collection => collection.id === id));
+    return this.store.findOneBy(this.collection, { id: id });
   },
-  
-  removeSong(id, songId) {
-    const arrayName = "songs";
-    this.store.removeItem(this.collection, id, arrayName, songId);
+
+  addPlaylist(playlist) {
+    this.store.add(this.collection, playlist);
   },
-  
+
   removePlaylist(id) {
     const playlist = this.getPlaylist(id);
-    this.store.removeCollection(this.collection, playlist);
+    this.store.remove(this.collection, playlist);
   },
-  
+
   removeAllPlaylists() {
     this.store.removeAll(this.collection);
   },
-  
-  addPlaylist(playlist) {
-    this.store.addCollection(this.collection, playlist);
-  },
-  
+
   addSong(id, song) {
-    const arrayName = "songs";
-    this.store.addItem(this.collection, id, arrayName, song);
+    const playlist = this.getPlaylist(id);
+    playlist.songs.push(song);
+  },
+
+  removeSong(id, songId) {
+    const playlist = this.getPlaylist(id);
+    const songs = playlist.songs;
+    _.remove(songs, { id: songId});
   },
   
   editSong(id, songId, updatedSong) {
-    const arrayName = "songs";
-    this.store.editItem(this.collection, id, songId, arrayName, updatedSong);
+    const playlist = this.getPlaylist(id);
+    const songs = playlist.songs;
+    const index = songs.findIndex(song => song.id === songId);
+    songs[index].title = updatedSong.title;
+    songs[index].artist = updatedSong.artist;
+    songs[index].genre = updatedSong.genre;
+    songs[index].duration = updatedSong.duration;
   },
   
   getUserPlaylists(userid) {
-    return this.store.findBy(this.collection, (playlist => playlist.userid === userid));
+    return this.store.findBy(this.collection, { userid: userid });
   },
-
 };
 
-export default playlistStore;
+module.exports = playlistStore;
