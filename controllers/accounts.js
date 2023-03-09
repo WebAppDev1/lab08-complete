@@ -1,8 +1,8 @@
 'use strict';
 
-import logger from '../utils/logger.js';
-import userStore from '../models/user-store.js';
-import { v4 as uuidv4 } from 'uuid';
+const userstore = require('../models/user-store');
+const logger = require('../utils/logger');
+const uuid = require('uuid');
 
 //create an accounts object
 const accounts = {
@@ -14,7 +14,6 @@ const accounts = {
     };
     response.render('index', viewData);
   },
-  
   //login function to render login page
   login(request, response) {
     const viewData = {
@@ -22,13 +21,11 @@ const accounts = {
     };
     response.render('login', viewData);
   },
-  
   //logout function to render logout page
   logout(request, response) {
     response.cookie('playlist', '');
     response.redirect('/');
   },
-  
  //signup function to render signup page
   signup(request, response) {
     const viewData = {
@@ -36,20 +33,20 @@ const accounts = {
     };
     response.render('signup', viewData);
   },
-  
  //register function to render the registration page for adding a new user
   register(request, response) {
     const user = request.body;
-    user.id = uuidv4();
-    userStore.addUser(user);
+    user.id = uuid();
+    userstore.addUser(user);
     logger.info('registering' + user.email);
-    response.redirect('/');
+    response.cookie('playlist', user.email);
+    logger.info('logging in' + user.email);
+    response.redirect('/start');
   },
-  
   //authenticate function to check user credentials and either render the login page again or the start page.
   authenticate(request, response) {
-    const user = userStore.getUserByEmail(request.body.email);
-    if (user) {
+    const user = userstore.getUserByEmail(request.body.email);
+    if (user && user.password===request.body.password) {
       response.cookie('playlist', user.email);
       logger.info('logging in' + user.email);
       response.redirect('/start');
@@ -57,12 +54,11 @@ const accounts = {
       response.redirect('/login');
     }
   },
-  
  //utility function getCurrentUser to check who is currently logged in
   getCurrentUser (request) {
     const userEmail = request.cookies.playlist;
-    return userStore.getUserByEmail(userEmail);
+    return userstore.getUserByEmail(userEmail);
   }
 }
 
-export default accounts;
+module.exports = accounts;

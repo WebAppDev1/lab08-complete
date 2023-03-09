@@ -1,16 +1,13 @@
 'use strict';
 
-import JsonStore from './json-store.js';
-            
 const developerStore = {
 
-  store: new JsonStore('./models/developer-store.json', { developers: [] }),
-  collection: 'developers',
+  developers: require('./developer-store.json').developers,
 
   getAllDevelopers() {
-    return this.store.findAll(this.collection);
+    return this.developers;
   },
 
 };
 
-export default developerStore;
+module.exports = developerStore;

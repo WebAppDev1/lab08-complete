@@ -1,9 +1,9 @@
 'use strict';
 
 // import all required modules
-import logger from '../utils/logger.js';
-import playlistStore from '../models/playlist-store.js';
-import accounts from './accounts.js';
+const logger = require('../utils/logger');
+const playlistStore = require('../models/playlist-store.js');
+const accounts = require ('./accounts.js');
 
 // create start object
 const start = {
@@ -37,4 +37,4 @@ const start = {
 };
 
 // export the start module
-export default start;
+module.exports = start;

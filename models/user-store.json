@@ -19,7 +19,28 @@
       "lastName": "Birney",
       "email": "rosanne@gmail.com",
       "password": "Secret1",
-      "id": "95267c74-28d6-49f6-afa3-8522115ef938"
+      "id": "b6605f62-f9ca-492b-a812-9607dcd218e6"
+    },
+    {
+      "firstName": "Rosanne",
+      "lastName": "Birney",
+      "email": "rosanne2@gmail.com",
+      "password": "Secret1",
+      "id": "9340fdd9-0b9e-4701-ad21-8b4994cf3a3e"
+    },
+    {
+      "firstName": "Mark",
+      "lastName": "Dom",
+      "email": "mark@dom.com",
+      "password": "Secret1",
+      "id": "c0c86f71-2001-492d-89f7-7cb1fd20f6a6"
+    },
+    {
+      "firstName": "Kate",
+      "lastName": "Wang",
+      "email": "kate@wang.com",
+      "password": "Secret1",
+      "id": "1c2ec411-3316-48cd-9277-c1c5a79e7a47"
     }
   ]
 }
